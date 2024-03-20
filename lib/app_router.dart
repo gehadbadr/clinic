@@ -1,12 +1,19 @@
 //import 'package:clinic/error_screen.dart';
+
 import 'package:clinic/core/consts/consts.dart';
+import 'package:clinic/views/screens/Home.dart';
+import 'package:clinic/views/screens/clinic/clinic_profile.screens.dart';
+import 'package:clinic/views/screens/products/products.screen.dart';
+import 'package:clinic/views/screens/videos/videos.list.screens.dart';
+//import 'package:clinic/views/screens/clinic/clinic_profile.screens.dart';
 
-import 'package:clinic/views/screens/clinic/clinic_services.screens.dart';
-
-class AppRouter {
+class AppRouter{
   
   static final router = {
-    '/': (context) =>  ClinicServices(),
+    '/': (context) =>  const Home(),
+     "/Homepage": (context) =>  const Home(),
+     AppRoutes.clinicProfileScreen: (context) => const ClinicProfile(),
+     AppRoutes.products: (context) => const Products(),
     // AppRoutes.introScreen: (context) => const IntroScreen(),
     // AppRoutes.languageScreen: (context) => const LanguageScreen(),
     // AppRoutes.loginScreen: (context) => const LoginScreen(),

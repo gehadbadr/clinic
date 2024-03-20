@@ -2,6 +2,7 @@ import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:flutter_svg/svg.dart';
 
 class CategoriesCard extends StatelessWidget {
   final String header1;
@@ -46,6 +47,8 @@ class CategoriesCard extends StatelessWidget {
                 top: -40,
                 right: -40,
                 child: Container(
+                  
+                //  color: AppColors.borderLine ,
                   width:  width== context.screenWidth/1.5? 100.w:90.w,
                   height: width== context.screenWidth/1.5?100.h:90.h,    
             
@@ -100,9 +103,17 @@ class CategoriesCard extends StatelessWidget {
                     child: Image.asset(
                   img,
                   fit: BoxFit.fill,
-                  width: width==  context.screenWidth/1.5? 100.w:40.w,
+                  width: width ==  context.screenWidth/1.5? 100.w:35.w,
                   height: 70.h,
-                )),
+                )
+                
+                // child:SvgPicture.asset(
+                //   img,
+                //   fit: BoxFit.fill,
+                //   width: width ==  context.screenWidth/1.5? 100.w:35.w,
+                //   height: 70.h,)
+
+                ),
               ],
             ),
           ],

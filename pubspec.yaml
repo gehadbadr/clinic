@@ -39,6 +39,7 @@ dependencies:
   velocity_x: ^4.1.2
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.10+1
+  cached_network_image: ^3.3.1
 
 dev_dependencies:
   flutter_test:
@@ -89,6 +90,11 @@ flutter:
         - asset: assets/fonts/Archivo/Archivo_Condensed-Regular.ttf
         - asset: assets/fonts/Archivo/Archivo_Condensed-Bold.ttf
           weight: 700
+    - family: ArefRuqaa
+      fonts:
+        - asset: assets/fonts/Aref_Ruqaa/ArefRuqaaInk-Regular.ttf
+        - asset: assets/fonts/Aref_Ruqaa/ArefRuqaaInk-Bold.ttf
+          weight: 700      
   # fonts:
   #   - family: Schyler
   #     fonts:

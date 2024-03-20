@@ -12,7 +12,7 @@ abstract class AppText {
    static const visitings = 'الزيارات المنزلية';
    static const educationalWed = 'المنصة التعليمية';
    static const cofid19 = 'كوفيد-19';
-   static const temp = 'قياس درجة الرارة';
+   static const temp = 'قياس درجة الحرارة';
    static const blood = 'نقل الدم';
    static const pressure = 'قياس ضغط الدم';
    static const sugar = 'قسم السكر';
@@ -20,6 +20,20 @@ abstract class AppText {
    static const operations = 'العمليات';
    static const gloves = 'جلفظات اليد';
 
+//product
+   static const products = 'خيوط الجراحة';
+   static const productTitle = 'خيط 0 راوند 2';
+   static const productDiscountPrice = '45';
+
+   static const instead ='بدلا من ';
+   static const productPrice ='50';
+   static const pound ='ج';
+   static const percentage ='2';
+   //clinic profile
+
+   static const phones ='ارقام التليفونات';
+   static const search ='بحث';
+   static const clinic =' عيادة';
 
   // static const nameHint = 'Name';
   // static const nameHint = 'Name';

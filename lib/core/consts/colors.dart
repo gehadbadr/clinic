@@ -18,5 +18,11 @@ abstract class AppColors {
   static const Color lightGolden = Color(0xffFEEAD1);
   static const Color chips = Color.fromARGB(255, 255, 175, 128);
   static const Color red = Colors.red;
+  static const Color navIcon = Color(0xFF9098B1);
+  static const Color cardBg = Color(0xFFD9D9D9);
+  static const Color blackColor = Color(0xFF000000);
+  static const Color appBg = Color(0xFFDFE2E5);
+
+
 
 }

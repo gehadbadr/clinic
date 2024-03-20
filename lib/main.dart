@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
+    WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
               //
               // This works for code too, not just values: Most code changes can be
               // tested with just a hot reload.
-               primarySwatch: Colors.deepOrange,
+              // primarySwatch: Colors.deepOrange,
  colorScheme: ColorScheme.fromSeed(
                   seedColor: const Color(0xff0070CD),
                   primary: const Color(0xff0070CD),
