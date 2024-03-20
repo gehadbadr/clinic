@@ -222,7 +222,7 @@ class ClinicProfile extends StatelessWidget {
         ),
         Positioned(
             top: -150,
-            left: -250,
+            left: -290,
             child: Container(
               //  color: AppColors.borderLine ,
               width: 410.w,
