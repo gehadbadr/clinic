@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 class AppBarWibget extends StatelessWidget {
   final int? currentIndex;
-    final Function()? onPressLeading;
+  final Function()? onPressLeading;
   final Function()? onPressAction;
   const AppBarWibget({super.key, this.currentIndex,this.onPressLeading,this.onPressAction});
 

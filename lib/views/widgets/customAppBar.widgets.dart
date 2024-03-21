@@ -6,14 +6,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class AppBarCustom extends StatelessWidget {
+class CustomAppBar extends StatelessWidget {
   final Color? bgColor;
   final IconData? leadingIcon;
   final IconData? actionIcon;
   final String? title;
   final Function()? onPressLeading;
   final Function()? onPressAction;
-  const AppBarCustom(
+  const CustomAppBar(
       {super.key,
       this.bgColor,
       this.leadingIcon,

@@ -19,6 +19,7 @@ static const icHospital = "${_pathIcon}hospital.svg";
 static const icEdu = "${_pathIcon}edu.svg";
 static const icPharmacy = "${_pathIcon}pharmacy.svg";
 static const icPlay = "${_pathIcon}icPlay.png";
+static const icCertifiy = "${_pathIcon}icCertifiy.png";
 
 static const cat1 = "${_path}cat1.png";
 static const cat2 = "${_path}cat2.png";

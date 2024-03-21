@@ -4,6 +4,8 @@ import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/screens/Home.dart';
 import 'package:clinic/views/screens/clinic/clinic_profile.screens.dart';
 import 'package:clinic/views/screens/products/products.screen.dart';
+import 'package:clinic/views/screens/videos/video_details.screen.dart';
+import 'package:clinic/views/screens/videos/video_details_list.screens.dart';
 import 'package:clinic/views/screens/videos/videos.list.screens.dart';
 //import 'package:clinic/views/screens/clinic/clinic_profile.screens.dart';
 
@@ -14,6 +16,8 @@ class AppRouter{
      "/Homepage": (context) =>  const Home(),
      AppRoutes.clinicProfileScreen: (context) => const ClinicProfile(),
      AppRoutes.products: (context) => const Products(),
+     AppRoutes.videoDetails: (context) => const VideoDetails(),
+     AppRoutes.videoDetailsList: (context) => const VideoDetailsList(),
     // AppRoutes.introScreen: (context) => const IntroScreen(),
     // AppRoutes.languageScreen: (context) => const LanguageScreen(),
     // AppRoutes.loginScreen: (context) => const LoginScreen(),

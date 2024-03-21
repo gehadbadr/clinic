@@ -16,7 +16,9 @@ abstract class AppRoutes {
   static const String settingsScreen = "/Settings";
   static const String profileScreen = "/Profile";
   static const String clinicProfileScreen = "/ClinicProfile";
-    static const String products = "/Products";
+  static const String products = "/Products";
+  static const String videoDetails = "/VideoDetails";
+  static const String videoDetailsList = "/VideoDetailsList";
 
   static const String editprofileScreen = "/EditProfile";
 

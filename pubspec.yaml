@@ -92,8 +92,8 @@ flutter:
           weight: 700
     - family: ArefRuqaa
       fonts:
-        - asset: assets/fonts/Aref_Ruqaa/ArefRuqaaInk-Regular.ttf
-        - asset: assets/fonts/Aref_Ruqaa/ArefRuqaaInk-Bold.ttf
+        - asset: assets/fonts/Aref_Ruqaa/Aref_Ruqaa/ArefRuqaa-Regular.ttf
+        - asset: assets/fonts/Aref_Ruqaa/Aref_Ruqaa/ArefRuqaa-Bold.ttf
           weight: 700      
   # fonts:
   #   - family: Schyler
