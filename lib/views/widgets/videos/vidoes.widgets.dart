@@ -127,7 +127,7 @@ class VideosWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.asset(
                       image,
-                      width: (context.screenWidth - 90) / 2,
+                      width: (context.screenWidth - 100) / 2,
                     // height: double.maxFinite,
                      
                       fit: BoxFit.fill,

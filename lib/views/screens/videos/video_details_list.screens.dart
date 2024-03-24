@@ -72,7 +72,7 @@ class VideoDetailsList extends StatelessWidget {
                   height: 5.h,
                 ),
                 Container(
-                  height: context.screenHeight-130.h,
+                  height: context.screenHeight-150.h,
                   child: ListView.builder(
                 //    scrollDirection: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
