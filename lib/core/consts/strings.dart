@@ -52,14 +52,18 @@ abstract class AppText {
   // static const appversion = "Version 1.0.0";
   // static const credits = "@Gehad Devs";  
   //auth
-//  static const name = 'Name';
-//  static const nameHint = 'Name';
-//  static const email = 'Email';
-//  static const emailHint = 'admin@admin.com';
-  //static const password = 'Password';
-//  static const passwordHint = 'Password';
-  //static const repassword = 'Confirm password';
-//  static const repasswordHint = 'Confirm Password';
+ static const name = 'Name';
+ static const nameHint = 'Name';
+  static const phone = 'phone';
+ static const phoneHint = 'Phone';
+   static const age = 'age';
+ static const ageHint = 'Age';
+ static const email = 'Email';
+ static const emailHint = 'admin@admin.com';
+  static const password = 'Password';
+ static const passwordHint = 'Password';
+  static const repassword = 'Confirm password';
+ static const repasswordHint = 'Confirm Password';
   // static const forgetPass = 'Forget Password';
   // static const login = 'Log In';
   // static const signup = 'Sign Up';
@@ -75,7 +79,7 @@ abstract class AppText {
   // static const errorAgree = 'You have to agree';
   // static const invalidEmail = 'Please enter a valid email';
   // static const weakPassword = 'Please Enter more than 6 digit .';
-  // static const invalidName = 'Name shouldn\'t be more than 20 letter .';
+  static const invalidName = 'Name shouldn\'t be more than 20 letter .';
   // static const loggedIn = 'you Logged successfully ';
   // static const errorNullloggedIn = 'No Email is registered';
   // static const errorloggedIn = 'Wrong Email or Password ';
@@ -86,12 +90,14 @@ abstract class AppText {
   // static const errorInvalidCredential= 'Invalid User.';
   // static const loggedOut = 'Logged out successfully ';
 //validation
-  // static const nameRequired = "Name is required";
-  // static const emailRequired = "Email is required";
-  // static const passwordRequired = "Password is required";
-  // static const repasswordRequired = "RePassword is required";
-  // static const oldPasswordRequired = "Old Password is required";
-  // static const newPasswordRequired = "New password is required";
+  static const nameRequired = "Name is required";
+  static const phoneRequired = "Phone is required";
+  static const ageRequired = "Age is required";
+  static const emailRequired = "Email is required";
+  static const passwordRequired = "Password is required";
+  static const repasswordRequired = "RePassword is required";
+  static const oldPasswordRequired = "Old Password is required";
+  static const newPasswordRequired = "New password is required";
 // reset password
 //  static const resetMsg = "New Password have been sent to email";
 
@@ -150,10 +156,13 @@ abstract class AppText {
  // profile
   //  static const change = "Change";
   //  static const imgUpdate = "Image profile is updated successfully.";
-//  static const oldPassword = 'Old password';
-//  static const oldPasswordHint = 'Old Password';
-//  static const newPassword = 'New Password';
-  // static const newPasswordHint = 'New Password';
+ static const oldPassword = 'Old password';
+ static const oldPasswordHint = 'Old Password';
+ static const newPassword = 'New Password';
+   static const searchHint = ' .... بحث';
+  static const newPasswordHint = 'New Password';
+
+//  static const share = 'New Password';
   // static const save = 'Save';
   // static const back = 'Back';
 //  static const errorOldPassword = 'Wrong old password .';

@@ -1,11 +1,11 @@
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/screens/clinic/clinic_services.screens.dart';
 import 'package:clinic/views/screens/clinic/text.dart';
-import 'package:clinic/views/screens/products/products.screen.dart';
 import 'package:clinic/views/screens/videos/videos.list.screens.dart';
 import 'package:clinic/views/widgets/appBar.widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -18,41 +18,44 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
 
   var navbarItem = [
-    const BottomNavigationBarItem(
-        icon: Icon(
+     BottomNavigationBarItem(
+        icon: const Icon(
           Icons.home,
         //  size: 20,
         ),
-        label: AppText.home),
-    // BottomNavigationBarItem(
-    //     icon: SvgPicture.asset(ImagesPath.suppliersIc),
-    //     label: AppText.suppliers),
-    const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.list_alt,
+        label: "home".tr),
+     BottomNavigationBarItem(
+        icon:const Icon(
+          Icons.dashboard_outlined,
         //  size: 20,
         ),
-        label: AppText.suppliers),
+        label: "suppliers".tr),
+
     BottomNavigationBarItem(
         icon: SvgPicture.asset(ImagesPath.icHospital),
-        label: AppText.hospitals),
-    const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.medical_services_sharp,
+        label: "hospitals".tr,
+        activeIcon: SvgPicture.asset(ImagesPath.icHospital,
+                      color: AppColors.primaryColor),),
+   BottomNavigationBarItem(
+        icon:const Icon(
+          Icons.medication_liquid,
         //  size: 20,
         ),
         //icon: SvgPicture.asset(ImagesPath.pharmacyIc),
-        label: AppText.pharmacy),
-    const BottomNavigationBarItem(
-        icon: Icon(
-          Icons.add_home_outlined,
+        label: "pharmacy".tr),
+     BottomNavigationBarItem(
+        icon: const Icon(
+          Icons.home_work_outlined,
       //    size: 20,
         ),
         //icon: SvgPicture.asset(ImagesPath.visitingsIc),
-        label: AppText.visitings),
+        label: "visitings".tr),
     BottomNavigationBarItem(
         icon: SvgPicture.asset(ImagesPath.icEdu),
-        label: AppText.educationalWed),
+        label: "educationalWed".tr,
+        
+        activeIcon: SvgPicture.asset(ImagesPath.icEdu,
+                      color: AppColors.primaryColor),),
   ];
 
   List body = [const MyWidget(),const ClinicServices(),const MyWidget(),const MyWidget(),const MyWidget(),const VideosList()];
@@ -60,7 +63,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:  PreferredSize(
-          preferredSize: const Size.fromHeight(60.0), child: AppBarWibget(currentIndex: _currentIndex)),
+          preferredSize: const Size.fromHeight(60.0), child: AppBarWibget(currentIndex: _currentIndex,bgColor:AppColors.whiteColor,
+)),
       body: body[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

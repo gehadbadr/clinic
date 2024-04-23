@@ -1,10 +1,9 @@
 import 'package:clinic/core/consts/consts.dart';
-import 'package:clinic/views/screens/products/products.screen.dart';
 
 import 'package:clinic/views/widgets/clinic/catsCard.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ClinicServices extends StatelessWidget {
@@ -23,7 +22,7 @@ class ClinicServices extends StatelessWidget {
                   height: 180.h,
                   child: InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.clinicProfileScreen);
+                      Get.toNamed(AppRoutes.clinicProfileScreen);
                     },
                     child: Image.asset(
                       ImagesPath.vector,
@@ -37,17 +36,17 @@ class ClinicServices extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CategoriesCard(
-                      header1: AppText.filtering,
-                      header2: AppText.leastModels,
-                      link: AppText.shopping,
+                      header1: "filtering".tr,
+                      header2: "leastModels".tr,
+                      link: "shopping".tr,
                       img: ImagesPath.cat1,
                       circleColor: AppColors.lightBlue,
                       bgColor: AppColors.lightBgBlue,
                       width: context.screenWidth / 2.2),
                   CategoriesCard(
-                      header1: AppText.cofid19,
-                      header2: AppText.temp,
-                      link: AppText.shopping,
+                      header1: "cofid19".tr,
+                      header2: "temp".tr,
+                      link: "shopping".tr,
                       img: ImagesPath.cat4,
                       circleColor: AppColors.borderLine,
                       bgColor: AppColors.lightGrey,
@@ -58,9 +57,9 @@ class ClinicServices extends StatelessWidget {
                 height: 10.h,
               ),
               CategoriesCard(
-                  header1: AppText.blood,
-                  header2: AppText.pressure,
-                  link: AppText.shopping,
+                  header1: "blood".tr,
+                  header2: "pressure".tr,
+                  link: "shopping".tr,
                   img: ImagesPath.cat3,
                   circleColor: AppColors.borderLine,
                   bgColor: AppColors.lightGrey,
@@ -72,17 +71,17 @@ class ClinicServices extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   CategoriesCard(
-                      header1: AppText.sugar,
-                      header2: AppText.masks,
-                      link: AppText.shopping,
+                      header1: "sugar".tr,
+                      header2: "masks".tr,
+                      link: "shopping".tr,
                       img: ImagesPath.cat10,
                       circleColor: AppColors.borderLine,
                       bgColor: AppColors.lightGrey,
                       width: context.screenWidth / 2.2),
                   CategoriesCard(
-                      header1: AppText.operations,
-                      header2: AppText.gloves,
-                      link: AppText.shopping,
+                      header1: "operations".tr,
+                      header2: "gloves".tr,
+                      link: "shopping".tr,
                       img: ImagesPath.cat2,
                       circleColor: AppColors.borderLine,
                       bgColor: AppColors.lightGrey,
@@ -97,7 +96,7 @@ class ClinicServices extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    AppText.specialCategories,
+                    "specialCategories".tr,
                     style:
                         TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w900),
                   ),
@@ -110,7 +109,7 @@ class ClinicServices extends StatelessWidget {
                         3,
                         (index) => InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.products);
+                       Get.toNamed(AppRoutes.products);
                     },
                     child:Container(
                             margin: const EdgeInsets.all(8.0),

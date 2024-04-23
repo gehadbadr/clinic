@@ -2,7 +2,6 @@ import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CategoriesCard extends StatelessWidget {
   final String header1;
@@ -28,30 +27,28 @@ class CategoriesCard extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
         //  height: 100,
-       width: width,
-        decoration:  BoxDecoration(
+        width: width,
+        decoration: BoxDecoration(
           color: bgColor,
           boxShadow: const <BoxShadow>[
             BoxShadow(
                 color: AppColors.borderLine,
                 blurRadius: 20.0,
                 spreadRadius: -20.0,
-                offset: Offset(0.0, 20.0)
-            )
+                offset: Offset(0.0, 20.0))
           ],
           //    boxShadow: BoxShadow()
         ),
         child: Stack(
           children: [
             Positioned(
-                top: -40,
-                right: -40,
+                top: -20,
+                right: -20,
                 child: Container(
-                  
-                //  color: AppColors.borderLine ,
-                  width:  width== context.screenWidth/1.5? 100.w:90.w,
-                  height: width== context.screenWidth/1.5?100.h:90.h,    
-            
+                  //  color: AppColors.borderLine ,
+                  width: width == context.screenWidth / 1.5 ? 100.w : 90.w,
+                  height: width == context.screenWidth / 1.5 ? 100.h : 90.h,
+
                   decoration: BoxDecoration(
                     color: circleColor,
                     borderRadius: const BorderRadius.all(
@@ -62,57 +59,60 @@ class CategoriesCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 10.h,
-                    ),
-                    Text(
-                      header1,
-                      style: TextStyle(
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w500,
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    padding: const EdgeInsets.only(right: 10),
+                      child: Image.asset(
+                    img,
+                    fit: BoxFit.fill,
+                    height: width == context.screenWidth / 1.5 ? 100.h :70.h,
+                    width: width == context.screenWidth / 1.5 ? 120.w :70.w,
+                  )),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10.h,
                       ),
-                      textScaleFactor: ScreenUtil().textScaleFactor,
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    Text(
-                      header2,
-                      style: TextStyle(
-                          fontSize: 16.sp, fontWeight: FontWeight.w700),
-                      textScaleFactor: ScreenUtil().textScaleFactor,
-                    ),
-                    InkWell(
-                      //  onTap: ,
-                      child: Text(
-                        link,
+                      Text(
+                        header1,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.secondryColor,
-                            decoration: TextDecoration.underline,
-                            decorationColor: AppColors.secondryColor),
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                         textScaleFactor: ScreenUtil().textScaleFactor,
                       ),
-                    ),
-                  ],
-                ),
-                SizedBox(
-                    child: Image.asset(
-                  img,
-                  fit: BoxFit.fill,
-                  width: width ==  context.screenWidth/1.5? 100.w:35.w,
-                  height: 70.h,
-                )
-                
-                // child:SvgPicture.asset(
-                //   img,
-                //   fit: BoxFit.fill,
-                //   width: width ==  context.screenWidth/1.5? 100.w:35.w,
-                //   height: 70.h,)
-
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Text(
+                        header2,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontSize: 16.sp, fontWeight: FontWeight.w700),
+                        textScaleFactor: ScreenUtil().textScaleFactor,
+                      ),
+                      InkWell(
+                        //  onTap: ,
+                        child: Text(
+                          link,
+                          style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.secondryColor,
+                              decoration: TextDecoration.underline,
+                              decorationColor: AppColors.secondryColor),
+                          textScaleFactor: ScreenUtil().textScaleFactor,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

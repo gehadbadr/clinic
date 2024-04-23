@@ -5,8 +5,15 @@ abstract class ImagesPath {
    static const String _pathLottie = "assets/lottie";
 
 static const icAppLogo = "${_pathIcon}app_logo.png";
+static const icSplach = "${_pathIcon}splash.png";
 static const icAppLogoAuth = "${_pathIcon}app_logo.png";
 static const imgBg = "${_path}bg.jpg";
+static const onBoarding1 = "${_path}Union.png";
+static const onBoarding2 = "${_path}boarding2.png";
+static const onBoarding3 = "${_path}Union.png";
+static const onBoarding4 = "${_path}boarding_4.png";
+static const onBoarding5 = "${_path}onboarding_5.png";
+
 static const icFacebookLogo = "${_pathIcon}facebook_logo.png";
 static const icGoogleLogo = "${_pathIcon}google_logo.png";
 static const icTwitterLogo = "${_pathIcon}twitter_logo.png";

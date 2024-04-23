@@ -1,10 +1,7 @@
 import 'package:clinic/core/consts/consts.dart';
-import 'package:clinic/views/widgets/customAppBar.widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:clinic/core/consts/consts.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class ClinicProfile extends StatelessWidget {
@@ -16,17 +13,7 @@ class ClinicProfile extends StatelessWidget {
       children: [
         Scaffold(
           backgroundColor: AppColors.primaryColor,
-          // appBar:
-          
-          //  PreferredSize(
-          //     preferredSize: Size.fromHeight(60.0),
-          //     child: CustomAppBar(
-          //       bgColor: AppColors.primaryColor,
-          //       onPressLeading: () {
-          //         print('jfdvkfvvvvvvvvvvvvvvv');
-          //         Navigator.pushNamed(context, AppRoutes.homepageScreen);
-          //       },
-          //     )),
+         
           body: SafeArea(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
@@ -39,7 +26,7 @@ class ClinicProfile extends StatelessWidget {
                       // color: AppColors.cardBg,
                       //  height: MediaQuery.of(context).size.width < 450 ? 250.h : 300.h,
                       width: double.infinity,
-                      margin: EdgeInsets.only(top: 100),
+                      margin: const EdgeInsets.only(top: 100),
                       decoration: const BoxDecoration(
                           color: AppColors.whiteColor,
                           borderRadius: BorderRadius.only(
@@ -63,15 +50,16 @@ class ClinicProfile extends StatelessWidget {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Icon(
-                                  Icons.location_on_outlined,
-                                  color: AppColors.primaryColor,
-                                ),
-                                Text('   30 كيلو متر',
+                               
+                                Text('   30 كيلو متر   ',
                                     style: TextStyle(
                                         fontSize: 20.sp,
                                         fontWeight: FontWeight.w500,
                                         color: AppColors.primaryColor)),
+                                 const Icon(
+                                  Icons.location_on_outlined,
+                                  color: AppColors.primaryColor,
+                                ),        
                               ]),
                           SizedBox(
                             height: 5.h,
@@ -82,7 +70,7 @@ class ClinicProfile extends StatelessWidget {
                                 height: 5.h,
                               ),
                               ListTile(
-                                leading: Container(
+                                trailing: Container(
                                   padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                     border:
@@ -93,20 +81,20 @@ class ClinicProfile extends StatelessWidget {
                                   child: const Icon(Icons.phone,
                                       color: AppColors.primaryColor),
                                 ),
-                                trailing: Text(AppText.phones,
+                                leading: Text("phones".tr,
                                     style: TextStyle(
                                         fontSize: 20.sp,
                                         fontWeight: FontWeight.w600,
                                         color: AppColors.blackColor)),
                               ),
-                              Divider(
+                              const Divider(
                                 color: AppColors.borderLine,
                               ),
                               SizedBox(
                                 height: 5.h,
                               ),
                               ListTile(
-                                leading: Container(
+                                trailing: Container(
                                   padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                     border:
@@ -114,14 +102,17 @@ class ClinicProfile extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(50),
                                     color: AppColors.whiteColor,
                                   ),
-                                  child: Icon(Icons.phone,
+                                  child: const Icon(Icons.phone,
                                       color: AppColors.primaryColor),
                                 ),
-                                title: Text('0105555555',
-                                    style: TextStyle(
-                                        fontSize: 18.sp,
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.blackColor)),
+                                title:Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text('0105555555',
+                                      style: TextStyle(
+                                          fontSize: 18.sp,
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.blackColor)),
+                                ),
                               ),
                               SizedBox(
                                 height: 5.h,
@@ -144,15 +135,15 @@ class ClinicProfile extends StatelessWidget {
                                 height: 5.h,
                               ),
                               ListTile(
-                                leading: Container(
-                                  padding: EdgeInsets.all(5),
+                                trailing: Container(
+                                  padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                     border:
                                         Border.all(color: AppColors.borderLine),
                                     borderRadius: BorderRadius.circular(50),
                                     color: AppColors.whiteColor,
                                   ),
-                                  child: Icon(Icons.location_on_outlined,
+                                  child: const Icon(Icons.location_on_outlined,
                                       color: AppColors.primaryColor),
                                 ),
                                 title: Text("25 ش ابن السراج متفرع من وينجت",
@@ -161,15 +152,15 @@ class ClinicProfile extends StatelessWidget {
                                         fontWeight: FontWeight.w600,
                                         color: AppColors.blackColor)),
                               ),
-                              Divider(
+                              const Divider(
                                 color: AppColors.borderLine,
                               ),
                               SizedBox(
                                 height: 5.h,
                               ),
                               ListTile(
-                                leading: Container(
-                                  padding: EdgeInsets.all(5),
+                                trailing: Container(
+                                  padding: const EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                     border:
                                         Border.all(color: AppColors.borderLine),
@@ -179,11 +170,14 @@ class ClinicProfile extends StatelessWidget {
                                   child: const Icon(Icons.access_time_rounded,
                                       color: AppColors.primaryColor),
                                 ),
-                                title: Text('من 10 ص الي 12 م',
-                                    style: TextStyle(
-                                        fontSize: 16.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.blackColor)),
+                                title: Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text('من 10 ص الي 12 م',
+                                      style: TextStyle(
+                                          fontSize: 16.sp,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColors.blackColor)),
+                                ),
                               ),
                               SizedBox(
                                 height: 5.h,
@@ -242,11 +236,12 @@ class ClinicProfile extends StatelessWidget {
             )),
             Positioned(
             top: 30,
-            left: 20,
+            //left: 20,
+            right: 20,
              child: IconButton(
                      onPressed: () {
                        
-                      Navigator.pushNamed(context, AppRoutes.homepageScreen);
+                     Get.toNamed(AppRoutes.homepageScreen);
                      },
                      
                      icon: const Icon(

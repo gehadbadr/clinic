@@ -1,9 +1,8 @@
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/widgets/videos/vidoes.widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class VideosList extends StatelessWidget {
   const VideosList({super.key});
@@ -22,7 +21,7 @@ class VideosList extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
            children: [
       
-          Text("منصة عيادة خاصة بالكورسات الطبية",
+          Text('videoHeader'.tr,
               style: TextStyle(fontFamily: "ArefRuqaa", fontSize: 20.sp,color: AppColors.blackColor)),
         ]),
         SizedBox(
@@ -44,7 +43,7 @@ class VideosList extends StatelessWidget {
               time: '30',
               view: '2.4k',
               date: '6 شهور',
-              onPress: () {  Navigator.pushNamed(context, AppRoutes.videoDetails);},
+              onPress: () { Get.toNamed( AppRoutes.videoDetails);},
               showPlayIcon: true,
             ),
           ),

@@ -1,12 +1,9 @@
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/widgets/appBar.widgets.dart';
 import 'package:clinic/views/widgets/customButton.widgets.dart';
-import 'package:clinic/views/widgets/videos/vidoes.widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-// import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class VideoDetails extends StatelessWidget {
@@ -17,43 +14,47 @@ class VideoDetails extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60.0),
-          child: AppBarWibget(currentIndex: 5)),
+          child: AppBarWibget(currentIndex: 5, bgColor:AppColors.appBg,)),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: 5.h,
             ),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              IconButton(
-                  onPressed: () {},
-                  icon:  Icon(
-                    Icons.share_outlined,
-                    color: AppColors.primaryColor,
-                    size: 30.sp,
-                  )),
-              SizedBox(
-                width: 10.w,
-              ),
-              InkWell(
-                child: Image.asset(
-                  ImagesPath.icShare,
-                  width: 20.w,
-                  height: 30.h,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              SizedBox(
-                width: 10.w,
-              ),
-              Text(" كورس خاص  بفصائل الدم",
-                  style: TextStyle(
-                      fontFamily: "ArefRuqaa",
-                      fontSize: 20.sp,
-                      color: AppColors.blackColor)),
-            ]),
-            SizedBox(
+             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      
+                      Text("  ${'specialcourse'.tr} فصائل الدم",
+                          style: TextStyle(
+                              fontFamily: "ArefRuqaa",
+                              fontSize: 20.sp,
+                              color: AppColors.blackColor)),
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                     
+                          InkWell(
+                        child: Image.asset(
+                          ImagesPath.icShare,
+                          width: 20.w,
+                          height: 30.h,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      
+                      SizedBox(
+                        width: 10.w,
+                      ),
+                       IconButton(
+                          onPressed: () {},
+                          icon:  Icon(
+                            Icons.share_outlined,
+                            color: AppColors.primaryColor,
+                            size: 30.sp,
+                          )),
+                    ]),
+                     SizedBox(
               height: 5.h,
             ),
             const Divider(
@@ -66,7 +67,7 @@ class VideoDetails extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: Padding(
                 padding: EdgeInsets.only(right: 20.w),
-                child: Text(" ماذا ستتعلم",
+                child: Text('Whatwillyoulearn'.tr,
                     style: TextStyle(
                         fontSize: 22.sp,
                         color: AppColors.primaryColor,
@@ -103,7 +104,7 @@ class VideoDetails extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: Padding(
                 padding: EdgeInsets.only(right: 20.w),
-                child: Text("  هذه المنصة تتضمن",
+                child: Text("thisCourseInclude".tr,
                     style: TextStyle(
                         fontSize: 22.sp,
                         color: AppColors.primaryColor,
@@ -116,21 +117,24 @@ class VideoDetails extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.only(right: 20.w),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  //mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(" 12ساعة و38 دقيقة/45فيديو",
-                        style: TextStyle(
-                            fontSize: 16.sp,
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.w700)),
-                    SizedBox(
-                      width: 10.w,
-                    ),
-                    Icon(
+                      Icon(
                       Icons.access_time,
                       color: AppColors.blackColor,
                       size: 18.sp,
                     ),
+                     SizedBox(
+                      width: 10.w,
+                    ),
+                    Text(" 12ساعة و38 دقيقة/45فيديو",
+                  //  textDirection:TextDirection.rtl ,
+                        style: TextStyle(
+                            fontSize: 16.sp,
+                            color: AppColors.primaryColor,
+                            fontWeight: FontWeight.w700)),
+                   
+                  
                   ],
                 )
                 ),
@@ -140,21 +144,23 @@ class VideoDetails extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.only(right: 20.w),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+               //   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("تاريخ الإنتاج:31/12/2023",
-                        style: TextStyle(
-                            fontSize: 16.sp,
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.w700)),
-                    SizedBox(
-                      width: 10.w,
-                    ),
                     Icon(
                       Icons.calendar_today_outlined,
                       color: AppColors.blackColor,
                       size: 18.sp,
                     ),
+                     SizedBox(
+                      width: 10.w,
+                    ),
+                    Text("تاريخ الإنتاج:31/12/2023",
+                        style: TextStyle(
+                            fontSize: 16.sp,
+                            color: AppColors.primaryColor,
+                            fontWeight: FontWeight.w700)),
+                   
+                    
                   ],
                 )),
                   SizedBox(
@@ -163,27 +169,30 @@ class VideoDetails extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.only(right: 20.w),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                //  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text("شهادة اتمام الكورس",
-                        style: TextStyle(
-                            fontSize: 16.sp,
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.w700)),
-                    SizedBox(
-                      width: 10.w,
-                    ),
-                  Image.asset(
+                              Image.asset(
                   ImagesPath.icCertifiy,
                   width: 20.w,
                   height: 20.h,
                   fit: BoxFit.fill,
                 ),
+                    SizedBox(
+                      width: 10.w,
+                    ),
+                    
+                    Text("شهادة اتمام الكورس",
+                        style: TextStyle(
+                            fontSize: 16.sp,
+                            color: const Color.fromRGBO(0, 112, 205, 1),
+                            fontWeight: FontWeight.w700)),
+                
                   ],
                 )),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    CustomButton(title:"متابعة",width: context.screenWidth/3,radius: 40,onPress:  () {Navigator.pushNamed(context, AppRoutes.videoDetailsList);},)
+                    CustomButton(title:"متابعة",width: context.screenWidth/3,radius: 40,onPress:  () { Get.toNamed(AppRoutes.videoDetailsList);},)
 
                   ],
                 )
