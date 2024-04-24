@@ -34,7 +34,7 @@ class VideoDetailsList extends StatelessWidget {
                       Text("  ${'specialcourse'.tr} فصائل الدم",
                           style: TextStyle(
                               fontFamily: "ArefRuqaa",
-                              fontSize: 20.sp,
+                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:18.sp,
                               color: AppColors.blackColor)),
                       SizedBox(
                         width: 10.w,

@@ -24,6 +24,7 @@ abstract class AppRoutes {
   static const String videoDetails = "/VideoDetails";
   static const String videoDetailsList = "/VideoDetailsList";
   static const String searchScreen = "/Search";
+  static const String cart = "/Cart";
 
   static const String editprofileScreen = "/EditProfile";
 

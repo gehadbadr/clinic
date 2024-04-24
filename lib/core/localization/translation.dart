@@ -153,6 +153,21 @@ class MyTranslation extends Translations {
     'thisCourseInclude':'هذه المنصة تتضمن',
     'subscribe':'اشترك الان ',
     'monthly':'شهريا',
+    'priceAfterDiscount':'السعر بعد الخصم',
+    'IndicationsForUse':'دواعي الاستخدام',
+    'pharmacyInfo':'معلومات عن الصيدلية',
+    'pharmacyName':'اسم الصيدلية',
+    'awayfromyou':'تبعد عنك',
+ 'pleaseWait':'من فضلك انتظر ',
+    'pleaseWait2':'ثانيه لاعادة الارسال',
+        'courseCompletionCertificate':'شهادة اتمام الكورس',
+            'productionDate':'تاريخ الانتاج',
+'hour':'ساعة',
+    'min':'دقيقة',
+    'video':'فيديو',
+        'and':'و',
+
+     
 
 
 
@@ -189,7 +204,7 @@ class MyTranslation extends Translations {
           "noDataFound": "لا يوجد بيانات",
           "reset": "إعادة ضبط",
           "alert": "تنبيه",
-          "doYouWantExit": "؟هل تريد الخروج من التطبيق",
+          "doYouWantExit": "هل تريد الخروج من التطبيق ؟",
           "sure": "تاكيد",
           "cancel": "الغاء",
                     "success": "نجاح",
@@ -209,6 +224,10 @@ class MyTranslation extends Translations {
           "onboardingtitle3": "Track Your Order",
           "onboardingBody3":
               "The order can be tracked at every stage \n until it reaches you",
+          "onboardingtitle4": "Emergency and home visit",
+          "onboardingBody4": "The clinic application provides flexibility in visits and home reservations, in terms of everything and 24-hour service.",
+          "onboardingtitle5": "Medical Educational Platform",
+          "onboardingBody5": "The clinic service provides you with many educational videos that help you learn everything that is useful in the medical field.",
           "next": "Next",
           "start": "Start App",
           "skip": "Skip",
@@ -239,7 +258,7 @@ class MyTranslation extends Translations {
           "signup": "Sign Up",
           "resetPassword": "Reset Password",
           "resetBody":"Enter your phone number and we will send you a code to reset your password",
-          "creatNewAccount": "Don\"t have an account ? ",
+          "creatNewAccount": "Don't have an account ? ",
           "register": "Register",
           "loginWith": "Log in with",
           "privacyPolicy": "Privacy Policy",
@@ -280,7 +299,7 @@ class MyTranslation extends Translations {
           "resetMsg": "New Password have been sent to email",
           "congratulations": "Congratulations",
           "company": "Company",
-          "person": "Person",
+          "person": "Personal",
           "patientFile": "Patient medical file",
           "nationalId": "National ID",
           "requiredNationalId": "The national ID is Required",
@@ -356,11 +375,11 @@ class MyTranslation extends Translations {
           "doYouWantExit": "Do you want to exit ?",
           "sure": "Sure",
           "cancel": "Cancel",
-                              "success": "Success",
+          "success": "Success",
 
 'filtering' :'filter',
    'leastModels' :'LeastModels',
-   'shopping' :'Shopping',
+   'shopping' :'Shopping Now',
    'specialCategories' :'Special Categories',
    'suppliers' :'Suppliers',
    'hospitals' :'Hospitals',
@@ -379,8 +398,8 @@ class MyTranslation extends Translations {
    'gloves' : 'Hand gloves',
 
 //product
-   'products':'خيوط الجراحة',
-   'productTitle' :'خيط 0 راوند 2',
+   'products':'surgical sutures',
+   'productTitle' :'Thread 0 Rhubarb 2',
    'productDiscountPrice' :'45',
 
    'instead' :'instead of',
@@ -400,7 +419,20 @@ class MyTranslation extends Translations {
     'thisCourseInclude':'This Course includes',
     'subscribe':'Subscribe Now',
     'monthly':'Monthly',
-
+    'priceAfterDiscount':'Price after discount',
+    'IndicationsForUse':'Indications for use',
+   
+    'pharmacyInfo':'Information about the pharmacy',
+    'pharmacyName':'Pharmacy Name',
+    'awayfromyou':'Away from you',
+    'pleaseWait':'Please wait for',
+    'pleaseWait2':'second to resend',
+   'courseCompletionCertificate':'Course completion certificate',
+    'productionDate':'Production Date',
+    'hour':'hour',
+    'min':'min',
+    'video':'videos',
+    'and':'and',
 
         }
       };

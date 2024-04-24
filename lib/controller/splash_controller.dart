@@ -18,9 +18,7 @@ class SplashController extends GetxController {
 
   _navigatetohome() async {
     await Future.delayed(const Duration(seconds: 3), () {});
-       Get.offAllNamed(AppRoutes.onBoarding) ; 
-     
-    
+       Get.offAllNamed(AppRoutes.languageScreen) ; 
   }
 
 

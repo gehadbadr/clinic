@@ -92,9 +92,9 @@ class ClinicServices extends StatelessWidget {
                 height: 5.h,
               ),
               Padding(
-                padding: const EdgeInsets.only(right: 20.0),
+                padding: const EdgeInsets.only(right: 20.0,left: 20.0),
                 child: Align(
-                  alignment: Alignment.centerRight,
+                  alignment:Get.locale!.languageCode == "ar"? Alignment.centerRight:Alignment.centerLeft,
                   child: Text(
                     "specialCategories".tr,
                     style:
@@ -117,7 +117,7 @@ class ClinicServices extends StatelessWidget {
                             height: 70.h,
                             width: 100.w,
                             decoration: const BoxDecoration(
-                              color: AppColors.lightGrey,
+                              color: AppColors.cardBg,
                               //    boxShadow: BoxShadow()
                             ),
                             // child:SvgPicture.asset(

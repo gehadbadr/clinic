@@ -11,6 +11,7 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.bgColor,
       appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60.0),
           child: AppBarWibget(
@@ -18,7 +19,7 @@ class Products extends StatelessWidget {
             onPressLeading: () {
               Get.toNamed(AppRoutes.homepageScreen);
             },
-            bgColor: AppColors.whiteColor,
+            bgColor: AppColors.bgColor,
           )),
       body: Container(
         padding: const EdgeInsets.all(8.0),
@@ -35,10 +36,10 @@ class Products extends StatelessWidget {
               children: [
                 Container(
                   padding:
-                      const EdgeInsets.only(left: 5.0, right: 5.0, top: 10),
+                      const EdgeInsets.all( 5.0,),
                   color: AppColors.cardBg,
-                  height:
-                      MediaQuery.of(context).size.width < 450 ? 250.h : 350.h,
+                  // height:
+                  //     MediaQuery.of(context).size.width < 450 ? 250.h : 350.h,
                   width: 120.w,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,7 +49,7 @@ class Products extends StatelessWidget {
                           Get.toNamed(AppRoutes.productDetails);
                         },
                         child: Container(
-                          padding: EdgeInsets.only(top: 30.h),
+                          padding: EdgeInsets.only(top: 10.h),
                           child: Image.asset(
                             ImagesPath.product,
                             fit: BoxFit.fill,
@@ -65,7 +66,7 @@ class Products extends StatelessWidget {
                           Get.toNamed(AppRoutes.productDetails);
                         },
                         child: Text("productTitle".tr,
-                            maxLines: 2,
+                            maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
                               fontSize: 16.sp,
@@ -113,7 +114,7 @@ class Products extends StatelessWidget {
                   color: AppColors.secondryColor,
                   child: Text(' - ${"percentage".tr} % ',
                       style: TextStyle(
-                          fontSize: 15.sp,
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w600,
                           color: AppColors.whiteColor)),
                 )

@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
               locale: controller.language,
               theme: controller.appTheme,
               translations: MyTranslation(),
-              routes: AppRouter.router     );
+              getPages: AppRouter.routes );
           }),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CustomButtomAuth extends StatelessWidget {
   final String text;
@@ -10,7 +11,7 @@ class CustomButtomAuth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(top: 30.h),
+      margin:text == "signup".tr ?EdgeInsets.only(top: 10.h):EdgeInsets.only(top: 30.h),
     //  padding: EdgeInsets.all(10),
       child: MaterialButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

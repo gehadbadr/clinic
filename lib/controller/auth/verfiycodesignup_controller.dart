@@ -7,20 +7,23 @@ import 'package:get/get.dart';
 abstract class VerifyCodeSignUpController extends GetxController {
   checkCode();
   goToSuccessSignUp();
+  goToSignUp();
 }
 
-class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {  
-
-  late String verifycode  ; 
-   bool loader = false;
+class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
+  late String verifycode;
+  bool loader = false;
   final _remainingTime = 0.obs;
   StreamSubscription<CountdownTimer>? timerr;
   int get remainingTime => _remainingTime.value;
 
-
-
   @override
   checkCode() {}
+
+  @override
+  goToSignUp() {
+    Get.offNamed(AppRoutes.signupScreen);
+  }
 
   @override
   goToSuccessSignUp() {
@@ -47,9 +50,7 @@ class VerifyCodeSignUpControllerImp extends VerifyCodeSignUpController {
 
   @override
   void onClose() {
-   
     timerr?.cancel();
     super.onClose();
   }
- 
 }

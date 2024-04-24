@@ -82,13 +82,13 @@ class VerifyCodeSignup extends StatelessWidget {
                     Obx(() => InkWell(
                           onTap: () {
                             if (controller.remainingTime == 0) {
-                              Get.back();
+                              controller.goToSignUp();
                             } else {
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(SnackBar(
                                 backgroundColor: AppColors.primaryColor,
                                 content: Text(
-                                  "من فضلك انتظر ${controller.remainingTime} ثانيه لاعادة الارسال",
+                                  "${"pleaseWait".tr} ${controller.remainingTime} ${"pleaseWait2".tr}",
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                   ),
@@ -96,17 +96,22 @@ class VerifyCodeSignup extends StatelessWidget {
                               ));
                             }
                           },
-                          child: Text(
-                            "resendVerfiyCode".tr,
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: controller.remainingTime == 0
-                                    ? FontWeight.bold
-                                    : FontWeight.normal,
-                                color: controller.remainingTime == 0
-                                    ? AppColors.primaryColor
-                                    : AppColors.fontGrey,
-                                fontSize: 15.sp),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width - 100.w,
+                            child: Expanded(
+                              child: Text(
+                                "resendVerfiyCode".tr,
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: controller.remainingTime == 0
+                                        ? FontWeight.bold
+                                        : FontWeight.normal,
+                                    color: controller.remainingTime == 0
+                                        ? AppColors.primaryColor
+                                        : AppColors.fontGrey,
+                                    fontSize: 15.sp),
+                              ),
+                            ),
                           ),
                         ))
                   ],

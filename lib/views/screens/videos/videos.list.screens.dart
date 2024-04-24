@@ -20,9 +20,16 @@ class VideosList extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
            children: [
-      
-          Text('videoHeader'.tr,
-              style: TextStyle(fontFamily: "ArefRuqaa", fontSize: 20.sp,color: AppColors.blackColor)),
+           SizedBox(
+            width: MediaQuery.of(context).size.width-50,
+            child: Expanded(
+              child: Align(
+                alignment: Alignment.center,
+                child: Text('videoHeader'.tr,
+                    style: TextStyle(fontFamily: "ArefRuqaa", fontSize: 20.sp,color: AppColors.blackColor)),
+              ),
+            ),
+          ),
         ]),
         SizedBox(
           height: 10.h,
@@ -39,7 +46,7 @@ class VideosList extends StatelessWidget {
             10,
             (index) => VideosWidget(
               image: ImagesPath.video,
-              title: 'فيديوهات عن فصائل الدم ',
+              title: ' فيديوهات عن فصائل الدم ',
               time: '30',
               view: '2.4k',
               date: '6 شهور',

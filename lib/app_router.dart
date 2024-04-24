@@ -1,9 +1,11 @@
 //import 'package:clinic/error_screen.dart';
 
 import 'package:clinic/core/consts/consts.dart';
+import 'package:clinic/core/middleware/mymiddleware.dart';
 import 'package:clinic/views/screens/Home.dart';
 import 'package:clinic/views/screens/auth/forgetpassword.dart';
 import 'package:clinic/views/screens/auth/verifycodesignup.dart';
+import 'package:clinic/views/screens/cart/cart.screen.dart';
 import 'package:clinic/views/screens/file/campany_file.dart';
 import 'package:clinic/views/screens/file/fileCategory.dart';
 import 'package:clinic/views/screens/auth/login.dart';
@@ -12,48 +14,54 @@ import 'package:clinic/views/screens/clinic/clinic_profile.screens.dart';
 import 'package:clinic/views/screens/clinic/search/Search.screens.dart';
 import 'package:clinic/views/screens/file/person_file.dart';
 import 'package:clinic/views/screens/file/person_file2.dart';
+import 'package:clinic/views/screens/language/language.dart';
 import 'package:clinic/views/screens/onBoarding/onBoarding.dart';
 import 'package:clinic/views/screens/products/product_details.screen.dart';
 import 'package:clinic/views/screens/products/products.screen.dart';
 import 'package:clinic/views/screens/splash/splash.dart';
 import 'package:clinic/views/screens/videos/video_details.screen.dart';
 import 'package:clinic/views/screens/videos/video_details_list.screens.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRouter{
   
-  static final Map<String, Widget Function(BuildContext)> router = {
-    '/': (context) =>   SplashScreen(),
-   // '/': (context) =>   SplashScreen(),
-     "/Homepage": (context) =>  const Home(),
-    AppRoutes.splash: (context) =>  SplashScreen(),
-    AppRoutes.onBoarding: (context) => const OnBoarding(),
-    AppRoutes.signupScreen: (context) => const SignUp(),
-    AppRoutes.loginScreen: (context) => const Login(),
-    AppRoutes.forgetScreen: (context) =>  const ForgetPassword(),
-    AppRoutes.verfiyCodeSignUpScreen: (context) =>  const VerifyCodeSignup(),
+  static List<GetPage<dynamic>>? routes = [
+  GetPage(name: "/", page: () => const Language() , middlewares: [
+    MyMiddleWare()
+  ]),
+   // GetPage(name: AppRoute.login, page: () => const Login()),
 
-    AppRoutes.fileCategory: (context) => const FileCategory(),
-    AppRoutes.companyFile: (context) => const CompanyFile(),
-    AppRoutes.personFile: (context) =>  PersonFile(),
-    AppRoutes.personFile2: (context) => const PersonFile2(),
+    //  "/Homepage", page: () =>  const Home(),
+    GetPage(name: AppRoutes.languageScreen, page: () => const Language()),
+    GetPage(name: AppRoutes.splash, page: () =>  SplashScreen()),
+    GetPage(name: AppRoutes.onBoarding, page: () => const OnBoarding()),
+    GetPage(name: AppRoutes.signupScreen, page: () => const SignUp()),
+    GetPage(name: AppRoutes.loginScreen, page: () => const Login()),
+    GetPage(name: AppRoutes.forgetScreen, page: () =>  const ForgetPassword()),
+    GetPage(name: AppRoutes.verfiyCodeSignUpScreen, page: () =>  const VerifyCodeSignup()),
 
-    AppRoutes.clinicProfileScreen: (context) => const ClinicProfile(),
-    AppRoutes.products: (context) => const Products(),
-    AppRoutes.productDetails: (context) =>  ProductDetails(),
-    AppRoutes.videoDetails: (context) =>  const VideoDetails(),
-    AppRoutes.videoDetailsList: (context) => const VideoDetailsList(),
-    AppRoutes.searchScreen: (context) => const SearchWidget(),
-    // AppRoutes.introScreen: (context) => const IntroScreen(),
-    // AppRoutes.languageScreen: (context) => const LanguageScreen(),
-    // AppRoutes.loginScreen: (context) => const LoginScreen(),
-    // AppRoutes.signupScreen: (context) => const SignupScreen(),
-    // AppRoutes.forgetScreen: (context) => const ForgetPasswordScreen(),
-   //AppRoutes.homepageScreen: (context) => const HomepageScreen(),
+    GetPage(name: AppRoutes.fileCategory, page: () => const FileCategory()),
+    GetPage(name: AppRoutes.companyFile, page: () => const CompanyFile()),
+    GetPage(name: AppRoutes.personFile, page: () =>  PersonFile()),
+    GetPage(name: AppRoutes.personFile2, page: () => const PersonFile2()),
+    GetPage(name: AppRoutes.homepageScreen, page: () => const Home()),
+
+    GetPage(name: AppRoutes.clinicProfileScreen, page: () => const ClinicProfile()),
+    GetPage(name: AppRoutes.products, page: () => const Products()),
+    GetPage(name: AppRoutes.productDetails, page: () =>  const ProductDetails()),
+    GetPage(name: AppRoutes.videoDetails, page: () =>  const VideoDetails()),
+    GetPage(name: AppRoutes.videoDetailsList, page: () => const VideoDetailsList()),
+    GetPage(name: AppRoutes.searchScreen, page: () => const SearchWidget()),
+    GetPage(name: AppRoutes.cart, page: () => const Cart()),
+    // GetPage(name: AppRoutes.introScreen, page: () => const IntroScreen()),
+    // GetPage(name: AppRoutes.loginScreen, page: () => const LoginScreen()),
+    // GetPage(name: AppRoutes.signupScreen, page: () => const SignupScreen()),
+    // GetPage(name: AppRoutes.forgetScreen, page: () => const ForgetPasswordScreen()),
+   //GetPage(name: AppRoutes.homepageScreen, page: () => const HomepageScreen()),
     
-  //  AppRoutes.settingsScreen: (context) => const SettingsScreen(),
-  //  AppRoutes.profileScreen: (context) => ProfileScreen(profileDetails:profileDetails),
-  //  AppRoutes.editprofileScreen: (context) => const EditProfileScreen(),
-
-  };
-}
+  //  GetPage(name: AppRoutes.settingsScreen, page: () => const SettingsScreen()),
+  //  GetPage(name: AppRoutes.profileScreen, page: () => ProfileScreen(profileDetails:profileDetails)),
+  //  GetPage(name: AppRoutes.editprofileScreen, page: () => const EditProfileScreen()),
+  ];
+  }

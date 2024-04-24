@@ -19,7 +19,7 @@ class PersonTabOne extends StatelessWidget {
         key: controller.tabOne,
         child: ListView(shrinkWrap: true, children: [
           // const LogoAuth(),
-          SizedBox(height: 10.h),
+        //  SizedBox(height: 10.h),
           Row(
             children: [
               CustomTextTitle(
@@ -106,7 +106,7 @@ class PersonTabOne extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 5.h),
           Text(
             "gender".tr,
             style: TextStyle(
@@ -114,10 +114,10 @@ class PersonTabOne extends StatelessWidget {
                 fontSize: 18.sp,
                 fontWeight: FontWeight.w600),
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 5.h),
 
           GenderDropdown(),
-          SizedBox(height: 40.h),
+          SizedBox(height: 20.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

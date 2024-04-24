@@ -1,5 +1,4 @@
 import 'package:clinic/core/services/prefrences.services.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clinic/core/consts/appTheme.dart';
 import 'package:get/get.dart';
@@ -11,13 +10,24 @@ class LocaleController extends GetxController {
 
   ThemeData appTheme = AppThemes.themeEnglish;
 
-  changeLang(String langcode) {
+  // changeLang(String langcode) {
+  //   Locale locale = Locale(langcode);
+  //   appTheme =
+  //       langcode == "ar" ? AppThemes.themeArabic : AppThemes.themeEnglish;
+  //   myServices.sharedPreferences.setString("lang", langcode);
+  //   Get.changeTheme(appTheme);
+  //   Get.updateLocale(locale);
+  // }
+
+    changeLang(String langcode) {
     Locale locale = Locale(langcode);
-    appTheme =
-        langcode == "ar" ? AppThemes.themeArabic : AppThemes.themeEnglish;
     myServices.sharedPreferences.setString("lang", langcode);
+    appTheme = langcode == "ar" ? AppThemes.themeArabic : AppThemes.themeEnglish;
+    Get.changeTheme(appTheme);
     Get.updateLocale(locale);
   }
+
+ 
 
   @override
   void onInit() {
@@ -29,8 +39,8 @@ class LocaleController extends GetxController {
       language = const Locale("en");
       appTheme = AppThemes.themeEnglish;
     } else {
-        //  language = Locale(Get.deviceLocale!.languageCode);
-  language = const Locale("ar");
+      //  language = Locale(Get.deviceLocale!.languageCode);
+      language = const Locale("ar");
       appTheme = AppThemes.themeEnglish;
     }
     super.onInit();

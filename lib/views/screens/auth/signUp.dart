@@ -35,9 +35,9 @@ class _SignUpState extends State<SignUp> {
                     text: "signup".tr,
                   ),
                   Stack(
-                    alignment: Alignment.bottomLeft,
+                    alignment:Get.locale!.languageCode == "ar"? Alignment.bottomLeft :Alignment.bottomRight,
                     children: [
-                      SizedBox(height: 20.h),
+                      SizedBox(height: 10.h),
                       Icon(
                         Icons.location_on_outlined,
                         color: AppColors.primaryColor,
@@ -100,19 +100,19 @@ class _SignUpState extends State<SignUp> {
                     isNum: true,
                   ),
                   SizedBox(
-                    height: 10.h,
+                    height: 5.h,
                   ),
                   Text("gender".tr,
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 16.sp)),
                   SizedBox(
-                    height: 10.h,
+                    height: 5.h,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
                       SizedBox(
-                        width: MediaQuery.of(context).size.width / 2.5,
+                        width: MediaQuery.of(context).size.width / 2.6,
                         child: ListTile(
                           title: Text('male'.tr,
                               style: TextStyle(fontSize: 16.sp)),
@@ -129,7 +129,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width / 2.5,
+                        width: MediaQuery.of(context).size.width / 2.6,
                         child: ListTile(
                           title: Text('female'.tr,
                               style: TextStyle(fontSize: 16.sp)),

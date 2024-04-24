@@ -11,7 +11,7 @@ class OnBoarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(OnBoardingControllerImp()) ;
-    return const Scaffold(
+    return  Scaffold(
         backgroundColor: AppColors.bgColor,
         body: SafeArea(
           child: Column(children: [

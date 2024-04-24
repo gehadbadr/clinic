@@ -18,53 +18,64 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
 
   var navbarItem = [
-     BottomNavigationBarItem(
+    BottomNavigationBarItem(
         icon: const Icon(
           Icons.home,
-        //  size: 20,
+          //  size: 20,
         ),
         label: "home".tr),
-     BottomNavigationBarItem(
-        icon:const Icon(
+    BottomNavigationBarItem(
+        icon: const Icon(
           Icons.dashboard_outlined,
-        //  size: 20,
+          //  size: 20,
         ),
         label: "suppliers".tr),
-
     BottomNavigationBarItem(
-        icon: SvgPicture.asset(ImagesPath.icHospital),
-        label: "hospitals".tr,
-        activeIcon: SvgPicture.asset(ImagesPath.icHospital,
-                      color: AppColors.primaryColor),),
-   BottomNavigationBarItem(
-        icon:const Icon(
+      icon: SvgPicture.asset(ImagesPath.icHospital),
+      label: "hospitals".tr,
+      activeIcon: SvgPicture.asset(ImagesPath.icHospital,
+          color: AppColors.primaryColor),
+    ),
+    BottomNavigationBarItem(
+        icon: const Icon(
           Icons.medication_liquid,
-        //  size: 20,
+          //  size: 20,
         ),
         //icon: SvgPicture.asset(ImagesPath.pharmacyIc),
         label: "pharmacy".tr),
-     BottomNavigationBarItem(
+    BottomNavigationBarItem(
         icon: const Icon(
           Icons.home_work_outlined,
-      //    size: 20,
+          //    size: 20,
         ),
         //icon: SvgPicture.asset(ImagesPath.visitingsIc),
         label: "visitings".tr),
     BottomNavigationBarItem(
-        icon: SvgPicture.asset(ImagesPath.icEdu),
-        label: "educationalWed".tr,
-        
-        activeIcon: SvgPicture.asset(ImagesPath.icEdu,
-                      color: AppColors.primaryColor),),
+      icon: SvgPicture.asset(ImagesPath.icEdu),
+      label: "educationalWed".tr,
+      activeIcon:
+          SvgPicture.asset(ImagesPath.icEdu, color: AppColors.primaryColor),
+    ),
   ];
 
-  List body = [const MyWidget(),const ClinicServices(),const MyWidget(),const MyWidget(),const MyWidget(),const VideosList()];
+  List body = [
+    const MyWidget(),
+    const ClinicServices(),
+    const MyWidget(),
+    const MyWidget(),
+    const MyWidget(),
+    const VideosList()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  PreferredSize(
-          preferredSize: const Size.fromHeight(60.0), child: AppBarWibget(currentIndex: _currentIndex,bgColor:AppColors.whiteColor,
-)),
+      backgroundColor: AppColors.bgColor,
+      appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(60.0),
+          child: AppBarWibget(
+            currentIndex: _currentIndex,
+            bgColor: AppColors.bgColor,
+          )),
       body: body[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,

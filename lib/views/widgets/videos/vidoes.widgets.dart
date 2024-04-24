@@ -31,7 +31,7 @@ class VideosWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.8),
       margin:  const EdgeInsets.symmetric(vertical: 0.1),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+      //  mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
          Expanded(
@@ -42,13 +42,14 @@ class VideosWidget extends StatelessWidget {
                 InkWell(
                   onTap: onPress,
                   child: Container(
-                    constraints: BoxConstraints(minHeight: 110.h),
+                    height: 100.h,
+                    constraints: BoxConstraints(minHeight: 100.h),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
                         image,
                        width: double.maxFinite,
-                      // height: double.maxFinite,
+                       height: 100.h,
                        
                         fit: BoxFit.fill,
                       ),
@@ -58,7 +59,7 @@ class VideosWidget extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      margin: const EdgeInsets.only(bottom: 10, right: 10),
+                      margin: const EdgeInsets.only(bottom: 10, right: 10, left: 10),
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8.0),
@@ -70,9 +71,9 @@ class VideosWidget extends StatelessWidget {
                           
                             Text(
                               time,
-                              textDirection:TextDirection.rtl ,
+                             // textDirection:TextDirection.rtl ,
                               style: TextStyle(
-                                  color: AppColors.whiteColor, fontSize: 14.sp),
+                                  color: AppColors.whiteColor, fontSize: 12.sp),
                             ),
                               showPlayIcon != null?
                             Row(
@@ -107,11 +108,11 @@ class VideosWidget extends StatelessWidget {
             child: SizedBox(
               width: (context.screenWidth - 20) / 2,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+              //  mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                  //    mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                              InkWell(
@@ -120,7 +121,7 @@ class VideosWidget extends StatelessWidget {
                             width: 120.w,
                             //  height: 80.h,
                             // color: Colors.amber,
-                            constraints: BoxConstraints(minHeight: 70.h),
+                            constraints: BoxConstraints(minHeight: 60.h),
                             child: Text(
                               title,
                               maxLines: 2,
@@ -129,7 +130,7 @@ class VideosWidget extends StatelessWidget {
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 20.sp,
+                                  fontSize: 16.sp,
                                   color: AppColors.blackColor),
                             ),
                           ),
@@ -151,13 +152,13 @@ class VideosWidget extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.only(right: 5.5),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                     // mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                        Text(
                           '${view} ${'seen'.tr}',
                           style: TextStyle(
                               //  fontWeight: FontWeight.w400,
-                              fontSize: 14.sp,
+                              fontSize: 12.sp,
                               color: AppColors.blackColor),
                         ),
                         SizedBox(
@@ -167,7 +168,7 @@ class VideosWidget extends StatelessWidget {
                           '${'from'.tr} ${date} ',
                           style: TextStyle(
                               //fontWeight: FontWeight.w400,
-                              fontSize: 14.sp,
+                              fontSize: 12.sp,
                               color: AppColors.blackColor),
                         ),
                         

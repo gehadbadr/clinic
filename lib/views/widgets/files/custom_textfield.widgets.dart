@@ -44,7 +44,7 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       const SizedBox(
-        height: 10,
+        height: 5,
       ),
       Text(
         widget.title,
@@ -54,7 +54,7 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
             fontWeight: FontWeight.w600),
       ),
        SizedBox(
-        height:10.h,
+        height:5.h,
       ),
       TextFormField(
         
@@ -109,7 +109,7 @@ class _CustomTextFieldState extends State<CustomTextFieldFile> {
               )
               ),
        SizedBox(
-        height: 10.h,
+        height: 5.h,
       ),
     ]);
   }

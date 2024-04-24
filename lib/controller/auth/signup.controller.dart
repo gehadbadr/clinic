@@ -42,10 +42,10 @@ class SignUpControllerImp extends SignUpController {
         // statusRequest = HandlingData.handlingData(response);
         if (StatusRequest.success == statusRequest) {
           //  data.addAll(response['data']);
-          Get.offNamed(AppRoutes.verfiyCodeSignUpScreen);
+          Get.toNamed(AppRoutes.verfiyCodeSignUpScreen);
           OverlayLoadingProgress.stop();
         } else {
-          Get.offNamed(AppRoutes.verfiyCodeSignUpScreen);
+          Get.toNamed(AppRoutes.verfiyCodeSignUpScreen);
           OverlayLoadingProgress.stop();
           // Get.defaultDialog(
           //     title: "ُWarning",

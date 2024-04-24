@@ -1,4 +1,5 @@
 import 'package:clinic/controller/onboarding_controller.dart';
+import 'package:clinic/core/localization/changelocal.dart';
 import 'package:clinic/views/widgets/logo.dart';
 import 'package:clinic/views/widgets/onBoarding/custombutton.onBoarding.dart';
 import 'package:flutter/material.dart';
@@ -8,8 +9,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
-  const CustomSliderOnBoarding({Key? key}) : super(key: key);
-
+  CustomSliderOnBoarding({Key? key}) : super(key: key);
+ // var localeController = Get.find<LocaleController>();
+  //var local = localeController.checkLang;
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
@@ -26,7 +28,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Stack(
-                        alignment: Alignment.topLeft,
+                        alignment:Get.locale!.languageCode == "ar"? Alignment.topLeft: Alignment.topRight,
                         children: [
                           Image.asset(
                             onBoardingList[i].image!,
@@ -35,7 +37,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                             fit: BoxFit.fill,
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(10.0),
                             child: InkWell(
                               child: Text('skip'.tr),
                               onTap: () {
@@ -53,6 +55,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                               fontSize: 22.sp)),
                       SizedBox(height: 10.h),
                       Container(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
                           constraints: BoxConstraints(minHeight: 150.h),
                           width: double.infinity,
                           alignment: Alignment.center,
@@ -69,11 +72,10 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
                     ],
                   ),
                   Positioned(
-                    left: MediaQuery.of(context).size.width / 3 +20,
+                    left: MediaQuery.of(context).size.width / 3 + 20,
                     child: const Padding(
-                      padding: EdgeInsets.only(top: 50.0),
-                      child:logoWidget()
-                    ),
+                        padding: EdgeInsets.only(top: 50.0),
+                        child: logoWidget()),
                   )
                 ],
               ),

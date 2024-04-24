@@ -20,7 +20,7 @@ class PersonTabTwo extends StatelessWidget {
               key: controller.tabTwo,
               child: ListView(shrinkWrap: true, children: [
                 // const LogoAuth(),
-                SizedBox(height: 10.h),
+              //  SizedBox(height: 10.h),
                 Row(
                   children: [
                     CustomTextTitle(
@@ -46,10 +46,15 @@ class PersonTabTwo extends StatelessWidget {
                       fontSize: 18.sp,
                       fontWeight: FontWeight.w600),
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 5.h),
 
-                BloodTypeDropdown(),
-                SizedBox(height: 20.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    BloodTypeDropdown(),
+                  ],
+                ),
+                SizedBox(height: 5.h),
 
                 Center(
                   child: Row(
@@ -90,7 +95,7 @@ class PersonTabTwo extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(height: 20.h),
+               // SizedBox(height: 20.h),
                 Center(
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,7 +134,7 @@ class PersonTabTwo extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: 20.h),
+                //SizedBox(height: 20.h),
                 Row(
                   children: [
                     Text(
@@ -139,16 +144,21 @@ class PersonTabTwo extends StatelessWidget {
                           fontSize: 18.sp,
                           fontWeight: FontWeight.w600),
                     ),
-                    Text(
-                      "( ${"historydetails".tr} )",
-                      style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600),
+                    Container(
+                      width: MediaQuery.of(context).size.width/2.4,
+                      child: Expanded(
+                        child: Text(
+                          "(${"historydetails".tr} )",
+                          style: TextStyle(
+                              color: AppColors.primaryColor,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: 10.h),
+                SizedBox(height: 5.h),
                 Row(
                   children: [
                     Container(

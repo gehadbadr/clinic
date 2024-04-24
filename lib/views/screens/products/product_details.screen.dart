@@ -1,8 +1,6 @@
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/widgets/appBar.widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -24,17 +22,17 @@ class ProductDetails extends StatelessWidget {
             bgColor: AppColors.secondryColor,
           )),
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        // physics: const BouncingScrollPhysics(),
         child: Stack(
           alignment: Alignment.topCenter,
           children: [
             Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 3,
+                  height: MediaQuery.of(context).size.height / 3.4,
                 ),
                 Container(
-                    padding: EdgeInsets.only(top: 100.h, left: 20, right: 20),
+                    padding:  EdgeInsets.only(top: MediaQuery.of(context).size.height < 700?200.h:100.h, left: 20, right: 20),
                     constraints: BoxConstraints(
                         minHeight: MediaQuery.of(context).size.height * 2 / 3),
                     decoration: const BoxDecoration(
@@ -42,8 +40,6 @@ class ProductDetails extends StatelessWidget {
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(20),
                             topRight: Radius.circular(20))),
-                    // padding:  const EdgeInsets.all(20),
-
                     child: Column(
                       children: [
                         Row(
@@ -53,30 +49,45 @@ class ProductDetails extends StatelessWidget {
                               flex: 1,
                               child: Container(
                                 padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    color: Colors.blue,
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(width: 2)),
                                 child: Column(
                                   children: [
-                                    Row(children: [Text("kjkhjhzf")]),
+                                    Row(children: [
+                                      // Container(
+                                      //   width: MediaQuery.of(context).size.width/4,
+                                      //   child: Expanded(
+                                      //     child:
+                                           Text(
+                                            "${"priceAfterDiscount".tr} : 2538 ${"pound".tr}",
+                                            style: TextStyle(color: AppColors.secondryColor,
+                                                fontWeight: FontWeight.bold,fontSize:Get.locale!.languageCode == "ar"? 12.sp: 9.sp),
+                                          ),
+                                      //  ),
+                                    //  )
+                                    ]),
                                     SizedBox(
-                                      height: 20.h,
+                                      height: 10.h,
                                     ),
-                                    Container(
-                                      color: Colors.amber,
-                                      child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            VxRating(
-                                              size: 12.sp,
-                                              count: 5,
-                                              value: 5,
-                                              onRatingUpdate: (String value) {},
-                                            )
-                                          ]),
-                                    )
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children:[ Container(
+                                        padding: EdgeInsets.all(3),
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: AppColors.primaryColor,
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                          child: Image.asset(
+                                            ImagesPath.cart,
+                                            width: 40.w,
+                                            height: 40.h,
+                                            fit: BoxFit.fill,
+                                          ),
+                                        ),
+                                      ),]
+                                    ),
                                   ],
                                 ),
                               ),
@@ -98,6 +109,7 @@ class ProductDetails extends StatelessWidget {
                                     Row(children: [
                                       Text(
                                         "خيط 0 راوند 2",
+                                        overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             fontSize: 15.sp,
                                             fontWeight: FontWeight.bold,
@@ -145,7 +157,7 @@ class ProductDetails extends StatelessWidget {
                                 children: [
                                   Row(children: [
                                     Text(
-                                      "دواعي الأستخدام:",
+                                      "${"IndicationsForUse".tr}:",
                                       style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold,
@@ -189,7 +201,7 @@ class ProductDetails extends StatelessWidget {
                                 children: [
                                   Row(children: [
                                     Text(
-                                      " معلومات عن الصيدلية:",
+                                      "${"pharmacyInfo".tr}:",
                                       style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold,
@@ -201,7 +213,7 @@ class ProductDetails extends StatelessWidget {
                                   ),
                                   Row(children: [
                                     Text(
-                                      "  اسم الصيدلية:",
+                                      "${"pharmacyName".tr}:  ",
                                       style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold,
@@ -211,7 +223,8 @@ class ProductDetails extends StatelessWidget {
                                       child: Padding(
                                         padding:
                                             const EdgeInsets.only(right: 8.0),
-                                        child: Text("متجر المصري للمستلزمات",
+                                        child: Text(
+                                          "متجر المصري للمستلزمات",
                                           style: TextStyle(
                                               fontSize: 15.sp,
                                               color: AppColors.blackColor),
@@ -219,12 +232,12 @@ class ProductDetails extends StatelessWidget {
                                       ),
                                     )
                                   ]),
-                                   SizedBox(
+                                  SizedBox(
                                     height: 5.h,
                                   ),
                                   Row(children: [
                                     Text(
-                                      "  تبعد عنك:",
+                                      "${"awayfromyou".tr}:",
                                       style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.bold,
@@ -234,9 +247,10 @@ class ProductDetails extends StatelessWidget {
                                       child: Padding(
                                         padding:
                                             const EdgeInsets.only(right: 8.0),
-                                        child:Align (
+                                        child: Align(
                                           alignment: Alignment.center,
-                                          child: Text("30 كيلومتر",
+                                          child: Text(
+                                            "30 كيلومتر",
                                             style: TextStyle(
                                                 fontSize: 15.sp,
                                                 color: AppColors.blackColor),
@@ -257,8 +271,8 @@ class ProductDetails extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 20.0.h),
               padding: EdgeInsets.all(5.0.h),
-              width: 250.w,
-              height: 250.w,
+              // width: 250.w,
+              // height: 250.h,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(200),
                 color: AppColors.whiteColor,
@@ -268,7 +282,7 @@ class ProductDetails extends StatelessWidget {
                 child: Image.asset(
                   ImagesPath.productProfile,
                   width: 250.w,
-                  height: 250.w,
+                  height: 250.h,
                   fit: BoxFit.fill,
                 ),
               ),

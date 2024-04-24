@@ -15,7 +15,7 @@ Future<bool> alertExitApp() {
             onPressed: () {
               exit(0);
             },
-            child: Text("sure".tr)),
+            child: Text("sure".tr,style: const TextStyle(color:AppColors.whiteColor))),
         ElevatedButton(
             style: ButtonStyle(
                 backgroundColor:
@@ -23,7 +23,7 @@ Future<bool> alertExitApp() {
             onPressed: () {
               Get.back();
             },
-            child: Text("cancel".tr))
+            child: Text("cancel".tr,style: const TextStyle(color:AppColors.whiteColor),))
       ]);
   return Future.value(true);
 }

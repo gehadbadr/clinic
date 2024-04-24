@@ -10,10 +10,10 @@ class ClinicProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment:Get.locale!.languageCode == "ar"?  Alignment.topRight : Alignment.topLeft,
       children: [
         Scaffold(
           backgroundColor: AppColors.primaryColor,
-         
           body: SafeArea(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
@@ -50,16 +50,15 @@ class ClinicProfile extends StatelessWidget {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                               
                                 Text('   30 كيلو متر   ',
                                     style: TextStyle(
                                         fontSize: 20.sp,
                                         fontWeight: FontWeight.w500,
                                         color: AppColors.primaryColor)),
-                                 const Icon(
+                                const Icon(
                                   Icons.location_on_outlined,
                                   color: AppColors.primaryColor,
-                                ),        
+                                ),
                               ]),
                           SizedBox(
                             height: 5.h,
@@ -105,7 +104,7 @@ class ClinicProfile extends StatelessWidget {
                                   child: const Icon(Icons.phone,
                                       color: AppColors.primaryColor),
                                 ),
-                                title:Align(
+                                title: Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text('0105555555',
                                       style: TextStyle(
@@ -124,7 +123,7 @@ class ClinicProfile extends StatelessWidget {
                               .roundedSM
                               .shadowSm
                               .margin(const EdgeInsets.all(12))
-                            //  .padding(const EdgeInsets.symmetric(horizontal: 16))
+                              //  .padding(const EdgeInsets.symmetric(horizontal: 16))
                               .make(),
                           SizedBox(
                             height: 25.h,
@@ -189,7 +188,7 @@ class ClinicProfile extends StatelessWidget {
                               .roundedSM
                               .shadowSm
                               .margin(const EdgeInsets.all(12))
-                            //  .padding(const EdgeInsets.symmetric(horizontal: 16))
+                              //  .padding(const EdgeInsets.symmetric(horizontal: 16))
                               .make(),
                           SizedBox(
                             height: 100.h,
@@ -212,7 +211,6 @@ class ClinicProfile extends StatelessWidget {
                         ),
                       ),
                     ),
-           
                   ],
                 ),
               ),
@@ -234,22 +232,20 @@ class ClinicProfile extends StatelessWidget {
                 ),
               ),
             )),
-            Positioned(
-            top: 30,
-            //left: 20,
-            right: 20,
-             child: IconButton(
-                     onPressed: () {
-                       
-                     Get.toNamed(AppRoutes.homepageScreen);
-                     },
-                     
-                     icon: const Icon(
-                       Icons.arrow_back,
-                       color: AppColors.whiteColor,
-                     ),
-                   ),
-           )
+         
+          Padding(
+            padding: const EdgeInsets.only(top:20.0,right: 20,left: 20),
+            child: IconButton(
+              onPressed: () {
+                Get.toNamed(AppRoutes.homepageScreen);
+              },
+              icon: const Icon(
+                Icons.arrow_back,
+                color: AppColors.whiteColor,
+              ),
+            ),
+          ),
+        // )
       ],
     );
   }

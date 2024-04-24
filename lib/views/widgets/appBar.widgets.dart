@@ -48,12 +48,12 @@ class AppBarWibget extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "clinic".tr,
+                        "عيادة".tr,
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style:  TextStyle(
                             fontFamily: "ArefRuqaa",
                             fontWeight: FontWeight.w600,
-                            fontSize: 30,
+                            fontSize:  30.sp,
                             color: AppColors.primaryColor),
                       ),
                       SizedBox(
@@ -66,7 +66,7 @@ class AppBarWibget extends StatelessWidget {
               : GestureDetector(
                   onTap: onPressLeading,
                   child:  Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Icon(
                       Icons.arrow_back,
                       color: currentIndex! == 11?AppColors.whiteColor:AppColors.primaryColor ,
@@ -80,7 +80,7 @@ class AppBarWibget extends StatelessWidget {
             ? const SizedBox()
             : currentIndex != null && currentIndex == 5
                 ? Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [

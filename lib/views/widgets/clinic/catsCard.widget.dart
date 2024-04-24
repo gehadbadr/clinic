@@ -1,6 +1,7 @@
 import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class CategoriesCard extends StatelessWidget {
@@ -42,8 +43,8 @@ class CategoriesCard extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-                top: -20,
-                right: -20,
+                top: -25,
+                right: -25,
                 child: Container(
                   //  color: AppColors.borderLine ,
                   width: width == context.screenWidth / 1.5 ? 100.w : 90.w,
@@ -56,19 +57,22 @@ class CategoriesCard extends StatelessWidget {
                     ),
                   ),
                 )),
+            Get.locale!.languageCode == "ar"? 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   flex: 1,
                   child: Container(
-                    padding: const EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.only(right: 10),
                       child: Image.asset(
-                    img,
-                    fit: BoxFit.fill,
-                    height: width == context.screenWidth / 1.5 ? 100.h :70.h,
-                    width: width == context.screenWidth / 1.5 ? 120.w :70.w,
-                  )),
+                        img,
+                        fit: BoxFit.fill,
+                        height:
+                            width == context.screenWidth / 1.5 ? 100.h : 70.h,
+                        width:
+                            width == context.screenWidth / 1.5 ? 120.w : 70.w,
+                      )),
                 ),
                 Expanded(
                   flex: 3,
@@ -99,11 +103,13 @@ class CategoriesCard extends StatelessWidget {
                         textScaleFactor: ScreenUtil().textScaleFactor,
                       ),
                       InkWell(
-                        //  onTap: ,
+                        onTap: () {
+                          Get.toNamed(AppRoutes.cart);
+                        },
                         child: Text(
                           link,
                           style: TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: Get.locale!.languageCode == "ar"? 16.sp:14.sp,
                               fontWeight: FontWeight.w700,
                               color: AppColors.secondryColor,
                               decoration: TextDecoration.underline,
@@ -115,7 +121,72 @@ class CategoriesCard extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
+            ):
+             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                   Expanded(
+                  flex: 3,
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      Text(
+                        header1,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 16.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        textScaleFactor: ScreenUtil().textScaleFactor,
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Text(
+                        header2,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                            fontSize: 16.sp, fontWeight: FontWeight.w700),
+                        textScaleFactor: ScreenUtil().textScaleFactor,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(AppRoutes.cart);
+                        },
+                        child: Text(
+                          link,
+                          style: TextStyle(
+                              fontSize: Get.locale!.languageCode == "ar"? 16.sp:12.sp,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.secondryColor,
+                              decoration: TextDecoration.underline,
+                              decorationColor: AppColors.secondryColor),
+                          textScaleFactor: ScreenUtil().textScaleFactor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+             
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Image.asset(
+                        img,
+                        fit: BoxFit.fill,
+                        height:
+                            width == context.screenWidth / 1.5 ? 100.h : 70.h,
+                        width:
+                            width == context.screenWidth / 1.5 ? 120.w : 70.w,
+                      )),
+                ),
+              ],
+            )
           ],
         ));
   }

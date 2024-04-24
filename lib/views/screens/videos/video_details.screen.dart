@@ -28,7 +28,7 @@ class VideoDetails extends StatelessWidget {
                       Text("  ${'specialcourse'.tr} فصائل الدم",
                           style: TextStyle(
                               fontFamily: "ArefRuqaa",
-                              fontSize: 20.sp,
+                              fontSize: Get.locale!.languageCode == "ar"? 20.sp:18.sp,
                               color: AppColors.blackColor)),
                       SizedBox(
                         width: 10.w,
@@ -64,12 +64,12 @@ class VideoDetails extends StatelessWidget {
               height: 5.h,
             ),
             Align(
-              alignment: Alignment.centerRight,
+              alignment:Get.locale!.languageCode == "ar"? Alignment.centerRight: Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.only(right: 20.w),
+                padding: EdgeInsets.only(right: 20.w,left: 20.w),
                 child: Text('Whatwillyoulearn'.tr,
                     style: TextStyle(
-                        fontSize: 22.sp,
+                        fontSize: 20.sp,
                         color: AppColors.primaryColor,
                         fontWeight: FontWeight.w700)),
               ),
@@ -79,12 +79,12 @@ class VideoDetails extends StatelessWidget {
               children: List.generate(
                   3,
                   (index) => Directionality(
-                        textDirection: TextDirection.rtl,
+                        textDirection: Get.locale!.languageCode == "ar"? TextDirection.rtl:TextDirection.ltr,
                         child: ListTile(
                           title: Text(
                               "  لوريم إيبسوم طريقة لكتابة النصوص في النشر والتصميم الجرافيكي تستخدم بشكل شائع لتوضيح الشكل المرئي للمستند أو الخط ، دون الاعتماد على محتوى ذي معنى. ",
                               style: TextStyle(
-                                  fontSize: 16.sp,
+                                  fontSize: 14.sp,
                                   color: AppColors.blackColor,
                                   fontWeight: FontWeight.w700)),
                           leading: const Icon(
@@ -101,12 +101,12 @@ class VideoDetails extends StatelessWidget {
               height: 5.h,
             ),
             Align(
-              alignment: Alignment.centerRight,
+              alignment:Get.locale!.languageCode == "ar"? Alignment.centerRight: Alignment.centerLeft,
               child: Padding(
-                padding: EdgeInsets.only(right: 20.w),
+                padding: EdgeInsets.only(right: 20.w ,left: 20.w),
                 child: Text("thisCourseInclude".tr,
                     style: TextStyle(
-                        fontSize: 22.sp,
+                        fontSize: 20.sp,
                         color: AppColors.primaryColor,
                         fontWeight: FontWeight.w700)),
               ),
@@ -115,7 +115,7 @@ class VideoDetails extends StatelessWidget {
               height: 5.h,
             ),
             Padding(
-                padding: EdgeInsets.only(right: 20.w),
+                padding: EdgeInsets.only(right: 20.w,left: 20.w),
                 child: Row(
                   //mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -127,10 +127,10 @@ class VideoDetails extends StatelessWidget {
                      SizedBox(
                       width: 10.w,
                     ),
-                    Text(" 12ساعة و38 دقيقة/45فيديو",
+                    Text(" ${"hour".tr} 38 ${"and".tr} ${"min".tr}/45 ${"video".tr}",
                   //  textDirection:TextDirection.rtl ,
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.w700)),
                    
@@ -142,7 +142,7 @@ class VideoDetails extends StatelessWidget {
               height: 10.h,
             ),
             Padding(
-                padding: EdgeInsets.only(right: 20.w),
+                padding: EdgeInsets.only(right: 20.w,left: 20.w),
                 child: Row(
                //   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -154,9 +154,9 @@ class VideoDetails extends StatelessWidget {
                      SizedBox(
                       width: 10.w,
                     ),
-                    Text("تاريخ الإنتاج:31/12/2023",
+                    Text("${"productionDate".tr} :31/12/2023",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: AppColors.primaryColor,
                             fontWeight: FontWeight.w700)),
                    
@@ -167,7 +167,7 @@ class VideoDetails extends StatelessWidget {
               height: 10.h,
             ),
             Padding(
-                padding: EdgeInsets.only(right: 20.w),
+                padding: EdgeInsets.only(right: 20.w,left: 20.w),
                 child: Row(
                 //  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -181,9 +181,9 @@ class VideoDetails extends StatelessWidget {
                       width: 10.w,
                     ),
                     
-                    Text("شهادة اتمام الكورس",
+                    Text('courseCompletionCertificate'.tr,
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: const Color.fromRGBO(0, 112, 205, 1),
                             fontWeight: FontWeight.w700)),
                 
@@ -192,7 +192,7 @@ class VideoDetails extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    CustomButton(title:"متابعة",width: context.screenWidth/3,radius: 40,onPress:  () { Get.toNamed(AppRoutes.videoDetailsList);},)
+                    CustomButton(title:"continue".tr,width: context.screenWidth/3,radius: 40,onPress:  () { Get.toNamed(AppRoutes.videoDetailsList);},)
 
                   ],
                 )
